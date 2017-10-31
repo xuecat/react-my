@@ -1,7 +1,5 @@
-import { Menu, Icon, Button } from 'antd';
+import { Menu, Icon } from 'antd';
 import React, { Component } from 'react';
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 class Sider extends Component {
     render() {
@@ -26,7 +24,7 @@ class Sider extends Component {
                     </Menu.Item>
                 </Menu>
                 <div className="ant-aside-action" onClick={this.props.onCollapseChange}>
-                    {collapse ? <Icon type="right" /> : <Icon type="left" />}
+                    {this.props.collapse ? <Icon type="right" /> : <Icon type="left" />}
                 </div>
             </aside>
         );
