@@ -2,19 +2,23 @@ import React, { Component } from 'react';
 import { Button } from 'antd';
 import logo from './logo.svg';
 import './App.css';
+import Sider from './sider';
 
 class App extends Component {
+
+  constructor(pro) {
+    super(pro);
+    this.state = {collapse: true,};
+  }
+
+  onCollapseChange() {
+    this.setState({collapse: !this.state.collapse});
+  }
+
   render() {
     return (
-      <div className="App">
-        <Button type="primary" />
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2> Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
+        <Sider onCollapseChange={() => this.onCollapseChange()}/>
       </div>
     );
   }
