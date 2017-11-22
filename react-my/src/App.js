@@ -17,8 +17,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className={this.collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
-        <Sider onCollapseChange={() => this.onCollapseChange()} collapse={this.collapse} />
+      <div className={this.state.collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
+        <Sider onCollapseChange={() => this.onCollapseChange()} collapse={this.state.collapse} />
         <div className="ant-layout-main">
           <div className="ant-layout-header"></div>
           <div className="ant-layout-breadcrumb">
