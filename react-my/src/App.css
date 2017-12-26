@@ -8,13 +8,18 @@
 .ant-layout-aside .ant-layout-logo {
   width: 150px;
   height: 32px;
-  background: #333;
+  background-image: url(./rbk.jpg);
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 6px;
   margin: 16px 24px 16px 28px;
   transition: all 0.3s ease;
 }
 
 .ant-layout-aside-collapse .ant-layout-logo {
+  background-image: url(./rbk.jpg);
+  background-size: 32px 32px;
   width: 32px;
   margin: 16px;
   transition: all 0.3s ease;
