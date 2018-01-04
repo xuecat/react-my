@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import { Breadcrumb, Icon } from 'antd';
-import {is, Map} from 'immutalbe';
 import logo from './logo.svg';
 import './App.css';
 import Sider from './sider';
+import {connect} from 'react-redux'
+import {createCollapse} from './data/Actions'
 
 class App extends Component {
 
-  constructor(pro) {
-    super(pro);
-    this.state = {collapse: true,};
-  }
-
-  onCollapseChange() {
-    this.setState({collapse: !this.state.collapse});
-  }
-
   render() {
+    const {onCollapseChange, collapse} = this.props;
     return (
-      <div className={this.state.collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
-        <Sider onCollapseChange={() => this.onCollapseChange()} collapse={this.state.collapse} />
+      <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
+        <Sider onCollapseChange={onCollapseChange} collapse={collapse} />
         <div className="ant-layout-main">
           <div className="ant-layout-header"></div>
           <div className="ant-layout-breadcrumb">
@@ -42,4 +35,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (states) => ({
+  collapse: states.get('collapse')
+})
+
+const mapDispatchToProps = (dis, own) => {
+  return {
+    onCollapseChange: dis(createCollapse)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

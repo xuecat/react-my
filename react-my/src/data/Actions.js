@@ -1,4 +1,4 @@
-export const COLLAPSE = Symbol("collapse");
+import {COLLAPSE} from  './Types'
 
 export function createAction(type, value) {
     return {type, value};
