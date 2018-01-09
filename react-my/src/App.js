@@ -41,7 +41,7 @@ const mapStateToProps = (states) => ({
 
 const mapDispatchToProps = (dis, own) => {
   return {
-    onCollapseChange: dis(createCollapse)
+    onCollapseChange:(arg) => {dis(createCollapse(arg))}
   }
 }
 

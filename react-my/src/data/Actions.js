@@ -5,7 +5,7 @@ export function createAction(type, value) {
 }
 
 export function createCollapse(v) {
-    return function(dispatch) {
-        return dispatch(createAction(COLLAPSE, v));
+    return function(dispatch, getState) {
+        return dispatch(createAction(COLLAPSE, !getState().collapse));
     }
 }

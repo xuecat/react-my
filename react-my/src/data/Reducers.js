@@ -5,7 +5,7 @@ import {COLLAPSE} from './Types'
 function collapse(state = null, action) {
     switch (action.type) {
         case COLLAPSE:
-            return state.set('collapse', !state.get('collapse'));
+            return action.value;
         default:
             break;
     }

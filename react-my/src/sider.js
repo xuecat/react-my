@@ -13,7 +13,7 @@ function Sider(props) {
                     <Link to="/"><Icon type="user" /> <span className="nav-text">导航一</span></Link>
                 </Menu.Item>
                 <Menu.Item key="setting">
-                    <Link><Icon type="setting" /> <span className="nav-text">导航二</span></Link>
+                    <Link to="/file"><Icon type="setting" /> <span className="nav-text">导航二</span></Link>
                 </Menu.Item>
             </Menu>
             <div className="ant-aside-action" onClick={props.onCollapseChange}>
