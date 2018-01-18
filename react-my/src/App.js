@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import logo from './logo.svg';
 import './App.css';
-import Sider from './sider';
-import {connect} from 'react-redux'
-import {createCollapse} from './data/Actions'
+import Sider from './component/sider';
+import {connect} from 'react-redux';
+import {createCollapse} from './data/Actions';
 
 class App extends Component {
 
